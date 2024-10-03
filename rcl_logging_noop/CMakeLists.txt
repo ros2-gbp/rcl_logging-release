@@ -20,11 +20,7 @@ if(NOT WIN32)
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-set(${PROJECT_NAME}_sources
-  src/rcl_logging_noop/rcl_logging_noop.cpp
-)
-
-add_library(${PROJECT_NAME} ${${PROJECT_NAME}_sources})
+add_library(${PROJECT_NAME} src/rcl_logging_noop.cpp)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
   rcutils::rcutils)
@@ -43,7 +39,7 @@ install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin)
 
-
+ament_export_dependencies(rcl_logging_interface)
 ament_export_libraries(${PROJECT_NAME})
 ament_export_targets(${PROJECT_NAME})
 ament_package()
