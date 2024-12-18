@@ -20,7 +20,11 @@ if(NOT WIN32)
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-add_library(${PROJECT_NAME} src/rcl_logging_noop.cpp)
+set(${PROJECT_NAME}_sources
+  src/rcl_logging_noop/rcl_logging_noop.cpp
+)
+
+add_library(${PROJECT_NAME} ${${PROJECT_NAME}_sources})
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
   rcutils::rcutils)
