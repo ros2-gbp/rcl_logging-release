@@ -1,1 +1,1 @@
-{"base": "1e3926c", "parent": "debian/rolling/rcl_logging_spdlog", "previous": "134da96", "trim": "", "trimbase": ""}
+{"base": "8eb8b410b4ca", "parent": "debian/rolling/rcl_logging_spdlog", "previous": "dcb2c3f81841", "trim": "", "trimbase": ""}
