@@ -2,10 +2,7 @@
 Changelog for package rcl_logging_spdlog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3.3.1 (2025-10-17)
-------------------
-
-3.3.0 (2025-04-25)
+3.2.3 (2025-10-17)
 ------------------
 * Cleanup overwritten warning messages on error. (`#128 <https://github.com/ros2/rcl_logging/issues/128>`_)
 * Contributors: Chris Lalancette

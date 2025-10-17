@@ -2,15 +2,7 @@
 Changelog for package rcl_logging_noop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3.3.1 (2025-10-17)
-------------------
-* Cleanup rcl_logging_noop dependencies. (`#132 <https://github.com/ros2/rcl_logging/issues/132>`_)
-  It shouldn't build_export_depend anything (as nothing
-  downstream should link against it), and all of its
-  dependencies can be private.
-* Contributors: Chris Lalancette
-
-3.3.0 (2025-04-25)
+3.2.3 (2025-10-17)
 ------------------
 
 3.2.2 (2024-10-03)
