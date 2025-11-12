@@ -2,15 +2,12 @@
 Changelog for package rcl_logging_interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3.3.2 (2025-11-12)
+3.2.4 (2025-11-12)
 ------------------
-* Fix cmake deprecation (`#133 <https://github.com/ros2/rcl_logging/issues/133>`_)
-* Contributors: mosfet80
+* Fix cmake deprecation (`#133 <https://github.com/ros2/rcl_logging/issues/133>`_) (`#134 <https://github.com/ros2/rcl_logging/issues/134>`_)
+* Contributors: mergify[bot]
 
-3.3.1 (2025-10-17)
-------------------
-
-3.3.0 (2025-04-25)
+3.2.3 (2025-10-17)
 ------------------
 
 3.2.2 (2024-10-03)
