@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.20)
 
 project(rcl_logging_noop)
 
@@ -23,8 +23,7 @@ endif()
 add_library(${PROJECT_NAME} src/rcl_logging_noop.cpp)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
-  rcutils::rcutils)
-target_link_libraries(${PROJECT_NAME} PUBLIC
+  rcutils::rcutils
   rcl_logging_interface::rcl_logging_interface)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE "RCL_LOGGING_INTERFACE_BUILDING_DLL")
