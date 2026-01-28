@@ -1,0 +1,13 @@
+Source: ros-rolling-rcl-logging-implementation
+Section: misc
+Priority: optional
+Maintainer: Tomoya Fujita <tomoya.fujita825@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-rolling-ament-cmake-ros, ros-rolling-ament-lint-auto <!nocheck>, ros-rolling-ament-lint-common <!nocheck>, ros-rolling-rcl-logging-interface, ros-rolling-rcl-logging-noop <!nocheck>, ros-rolling-rcpputils, ros-rolling-rcutils, ros-rolling-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-rolling-rcl-logging-implementation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-rolling-rcl-logging-interface, ros-rolling-rcl-logging-spdlog, ros-rolling-rcpputils, ros-rolling-rcutils, ros-rolling-ros-workspace
+Description: Provides the ability to load logging implementations at runtime.
+ This package acts as an abstraction layer between rcl and the actual logging implementation (e.g., spdlog, noop, or custom implementations).
