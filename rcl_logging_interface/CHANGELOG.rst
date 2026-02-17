@@ -2,75 +2,10 @@
 Changelog for package rcl_logging_interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3.4.0 (2026-01-28)
+2.3.2 (2026-02-16)
 ------------------
 
-3.3.2 (2025-11-12)
-------------------
-* Fix cmake deprecation (`#133 <https://github.com/ros2/rcl_logging/issues/133>`_)
-* Contributors: mosfet80
-
-3.3.1 (2025-10-17)
-------------------
-
-3.3.0 (2025-04-25)
-------------------
-
-3.2.2 (2024-10-03)
-------------------
-
-3.2.1 (2024-07-29)
-------------------
-
-3.2.0 (2024-04-26)
-------------------
-
-3.1.0 (2024-03-28)
-------------------
-* Check allocator validity in some rcl_logging functions (`#116 <https://github.com/ros2/rcl_logging/issues/116>`_)
-  If the allocator is zero-initialized, it may cause a segfault when it is
-  used later in the functions.
-* Use (void) in declaration of param-less function (`#114 <https://github.com/ros2/rcl_logging/issues/114>`_)
-* Contributors: Christophe Bedard, Scott K Logan
-
-3.0.0 (2024-01-24)
-------------------
-* add file_name_prefix parameter to external log configuration. (`#109 <https://github.com/ros2/rcl_logging/issues/109>`_)
-* Contributors: Tomoya Fujita
-
-2.7.1 (2023-12-26)
-------------------
-* Migrate to std::filesystem (`#104 <https://github.com/ros2/rcl_logging/issues/104>`_)
-* Contributors: Kenta Yonekura
-
-2.7.0 (2023-09-07)
-------------------
-* Remove the last uses of ament_target_dependencies in this repo. (`#102 <https://github.com/ros2/rcl_logging/issues/102>`_)
-* Contributors: Chris Lalancette
-
-2.6.0 (2023-04-27)
-------------------
-
-2.5.1 (2023-04-11)
-------------------
-
-2.5.0 (2023-02-13)
-------------------
-* Update rcl_logging to C++17. (`#98 <https://github.com/ros2/rcl_logging/issues/98>`_)
-* Contributors: Chris Lalancette
-
-2.4.3 (2022-11-18)
-------------------
-* Updated maintainers - 2022-11-07 (`#96 <https://github.com/ros2/rcl_logging/issues/96>`_)
-* Contributors: Audrow Nash
-
-2.4.2 (2022-11-02)
-------------------
-
-2.4.1 (2022-09-13)
-------------------
-
-2.4.0 (2022-04-29)
+2.3.1 (2022-11-07)
 ------------------
 
 2.3.0 (2022-03-01)

@@ -15,7 +15,6 @@
 
 #include <rcutils/allocator.h>
 #include <rcutils/logging.h>
-#include <rcutils/macros.h>
 
 #include <rcl_logging_interface/rcl_logging_interface.h>
 
@@ -36,7 +35,6 @@ public:
   void SetUp(benchmark::State & st)
   {
     rcl_logging_ret_t ret = rcl_logging_external_initialize(
-      nullptr,
       nullptr,
       rcutils_get_default_allocator());
     if (ret != RCL_LOGGING_RET_OK) {
@@ -74,7 +72,6 @@ BENCHMARK_F(LoggingBenchmarkPerformance, log_level_hit)(benchmark::State & st)
   reset_heap_counters();
 
   for (auto _ : st) {
-    RCUTILS_UNUSED(_);
     rcl_logging_external_log(RCUTILS_LOG_SEVERITY_INFO, nullptr, data.c_str());
   }
 }
@@ -83,7 +80,6 @@ BENCHMARK_F(LoggingBenchmarkPerformance, log_level_miss)(benchmark::State & st)
 {
   setLogLevel(RCUTILS_LOG_SEVERITY_INFO, st);
   for (auto _ : st) {
-    RCUTILS_UNUSED(_);
     rcl_logging_external_log(RCUTILS_LOG_SEVERITY_DEBUG, nullptr, data.c_str());
   }
 }
@@ -91,7 +87,7 @@ BENCHMARK_F(LoggingBenchmarkPerformance, log_level_miss)(benchmark::State & st)
 BENCHMARK_F(PerformanceTest, logging_reinitialize)(benchmark::State & st)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
-  rcl_logging_ret_t ret = rcl_logging_external_initialize(nullptr, nullptr, allocator);
+  rcl_logging_ret_t ret = rcl_logging_external_initialize(nullptr, allocator);
   if (ret != RCL_LOGGING_RET_OK) {
     st.SkipWithError(rcutils_get_error_string().str);
   }
@@ -99,8 +95,7 @@ BENCHMARK_F(PerformanceTest, logging_reinitialize)(benchmark::State & st)
   reset_heap_counters();
 
   for (auto _ : st) {
-    RCUTILS_UNUSED(_);
-    ret = rcl_logging_external_initialize(nullptr, nullptr, allocator);
+    ret = rcl_logging_external_initialize(nullptr, allocator);
     if (ret != RCL_LOGGING_RET_OK) {
       st.SkipWithError(rcutils_get_error_string().str);
     }
@@ -116,8 +111,7 @@ BENCHMARK_F(PerformanceTest, logging_initialize_shutdown)(benchmark::State & st)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   for (auto _ : st) {
-    RCUTILS_UNUSED(_);
-    rcl_logging_ret_t ret = rcl_logging_external_initialize(nullptr, nullptr, allocator);
+    rcl_logging_ret_t ret = rcl_logging_external_initialize(nullptr, allocator);
     if (ret != RCL_LOGGING_RET_OK) {
       st.SkipWithError(rcutils_get_error_string().str);
     }

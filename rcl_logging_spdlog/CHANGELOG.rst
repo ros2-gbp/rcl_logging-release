@@ -2,104 +2,15 @@
 Changelog for package rcl_logging_spdlog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3.4.0 (2026-01-28)
+2.3.2 (2026-02-16)
 ------------------
+* change flushing behavior for spdlog log files, and add env var to use old style (no explicit flushing) (`#95 <https://github.com/ros2/rcl_logging/issues/95>`_) (`#136 <https://github.com/ros2/rcl_logging/issues/136>`_)
+* Contributors: mergify[bot]
 
-3.3.2 (2025-11-12)
+2.3.1 (2022-11-07)
 ------------------
-* Fix cmake deprecation (`#133 <https://github.com/ros2/rcl_logging/issues/133>`_)
-* Contributors: mosfet80
-
-3.3.1 (2025-10-17)
-------------------
-
-3.3.0 (2025-04-25)
-------------------
-* Cleanup overwritten warning messages on error. (`#128 <https://github.com/ros2/rcl_logging/issues/128>`_)
-* Contributors: Chris Lalancette
-
-3.2.2 (2024-10-03)
-------------------
-* rcl_logging_interface is only valid path with build environment. (`#122 <https://github.com/ros2/rcl_logging/issues/122>`_)
-* README update and some cleanups. (`#120 <https://github.com/ros2/rcl_logging/issues/120>`_)
-* Contributors: Tomoya Fujita
-
-3.2.1 (2024-07-29)
-------------------
-* Updated deprecated API (`#117 <https://github.com/ros2/rcl_logging/issues/117>`_)
-* Contributors: Alejandro Hernández Cordero
-
-3.2.0 (2024-04-26)
-------------------
-
-3.1.0 (2024-03-28)
-------------------
-* Check allocator validity in some rcl_logging functions (`#116 <https://github.com/ros2/rcl_logging/issues/116>`_)
-  If the allocator is zero-initialized, it may cause a segfault when it is
-  used later in the functions.
-* Cleanup the tests. (`#115 <https://github.com/ros2/rcl_logging/issues/115>`_)
-  * Cleanup the tests.
-  There are a few different fixes in here:
-  1.  Move away from using "popen" to get the list of files
-  in a directory.  Instead, switch to using the C++ std::filesystem
-  directory iterator and doing the work ourselves, which is portable
-  and much less error-prone.
-  2.  Set the ROS_LOG_DIR for all of the tests in here.  This should
-  make the test resistant to being run in parallel with other tests.
-  3.  Consistently use rcpputils::set_env_var, rather than a mix
-  of rcpputils and rcutils.
-* Update quality declaration document (`#112 <https://github.com/ros2/rcl_logging/issues/112>`_)
-* Re-order rcl_logging_interface include (`#111 <https://github.com/ros2/rcl_logging/issues/111>`_)
-* Contributors: Chris Lalancette, Christophe Bedard, Scott K Logan
-
-3.0.0 (2024-01-24)
-------------------
-* add file_name_prefix parameter to external log configuration. (`#109 <https://github.com/ros2/rcl_logging/issues/109>`_)
-* Contributors: Tomoya Fujita
-
-2.7.1 (2023-12-26)
-------------------
-* Migrate to std::filesystem (`#104 <https://github.com/ros2/rcl_logging/issues/104>`_)
-* Contributors: Kenta Yonekura
-
-2.7.0 (2023-09-07)
-------------------
-* Remove the last uses of ament_target_dependencies in this repo. (`#102 <https://github.com/ros2/rcl_logging/issues/102>`_)
-* Contributors: Chris Lalancette
-
-2.6.0 (2023-04-27)
-------------------
-
-2.5.1 (2023-04-11)
-------------------
-* Mark the benchmark _ as unused. (`#99 <https://github.com/ros2/rcl_logging/issues/99>`_)
-* Contributors: Chris Lalancette
-
-2.5.0 (2023-02-13)
-------------------
-* Update rcl_logging to C++17. (`#98 <https://github.com/ros2/rcl_logging/issues/98>`_)
-* Contributors: Chris Lalancette
-
-2.4.3 (2022-11-18)
-------------------
-* change flushing behavior for spdlog log files, and add env var to use old style (no explicit flushing) (`#95 <https://github.com/ros2/rcl_logging/issues/95>`_)
-  * now flushes every ERROR message and periodically every 5 seconds
-  * can set ``RCL_LOGGING_SPDLOG_EXPERIMENTAL_OLD_FLUSHING_BEHAVIOR=1`` to get old behavior
-* Updated maintainers - 2022-11-07 (`#96 <https://github.com/ros2/rcl_logging/issues/96>`_)
-* Contributors: Audrow Nash, William Woodall
-
-2.4.2 (2022-11-02)
-------------------
-* Disable cppcheck for rcl_logging_spdlog. (`#93 <https://github.com/ros2/rcl_logging/issues/93>`_)
-* Contributors: Chris Lalancette
-
-2.4.1 (2022-09-13)
-------------------
-* ament_export_dependencies any package with targets we linked against (`#89 <https://github.com/ros2/rcl_logging/issues/89>`_)
-* Contributors: Shane Loretz
-
-2.4.0 (2022-04-29)
-------------------
+* ament_export_dependencies any package with targets we linked against (`#89 <https://github.com/ros2/rcl_logging/issues/89>`_) (`#90 <https://github.com/ros2/rcl_logging/issues/90>`_)
+* Contributors: mergify[bot]
 
 2.3.0 (2022-03-01)
 ------------------
