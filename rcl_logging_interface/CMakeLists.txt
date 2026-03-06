@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.20)
 
 project(rcl_logging_interface)
 
@@ -6,9 +6,10 @@ project(rcl_logging_interface)
 if(NOT CMAKE_C_STANDARD)
   set(CMAKE_C_STANDARD 11)
 endif()
-# Default to C++14
+# Default to C++17
 if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
+  set(CMAKE_CXX_STANDARD 17)
+  set(CMAKE_CXX_STANDARD_REQUIRED ON)
 endif()
 
 if(NOT WIN32)
@@ -25,7 +26,7 @@ add_library(${PROJECT_NAME} ${${PROJECT_NAME}_sources})
 target_include_directories(${PROJECT_NAME} PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
   "$<INSTALL_INTERFACE:include/${PROJECT_NAME}>")
-ament_target_dependencies(${PROJECT_NAME} rcutils)
+target_link_libraries(${PROJECT_NAME} PUBLIC rcutils::rcutils)
 target_compile_definitions(${PROJECT_NAME} PRIVATE "RCL_LOGGING_INTERFACE_BUILDING_DLL")
 
 install(
@@ -53,8 +54,7 @@ if(BUILD_TESTING)
   find_package(rcpputils REQUIRED)
   ament_add_gtest(test_get_logging_directory test/test_get_logging_directory.cpp)
   if(TARGET test_get_logging_directory)
-    target_link_libraries(test_get_logging_directory ${PROJECT_NAME})
-    ament_target_dependencies(test_get_logging_directory rcutils rcpputils)
+    target_link_libraries(test_get_logging_directory ${PROJECT_NAME} rcpputils::rcpputils rcutils::rcutils)
   endif()
 endif()
 

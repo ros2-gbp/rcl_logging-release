@@ -2,6 +2,7 @@ This repository contains several packages which are all related to the ROS loggi
 
 ## Packages
 
-- rcl_logging_spdlog
-- rcl_logging_log4cxx
+- rcl_logging_interface
+- rcl_logging_implementation
 - rcl_logging_noop
+- rcl_logging_spdlog
