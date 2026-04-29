@@ -1,0 +1,12 @@
+Source: ros-lyrical-rcl-logging-noop
+Section: misc
+Priority: optional
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-lyrical-ament-cmake-ros, ros-lyrical-ament-lint-auto <!nocheck>, ros-lyrical-ament-lint-common <!nocheck>, ros-lyrical-rcl-logging-interface, ros-lyrical-rcutils, ros-lyrical-ros-workspace
+Homepage: https://index.ros.org/p/rcl_logging_noop/#lyrical
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-rcl-logging-noop
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lyrical-rcl-logging-interface, ros-lyrical-rcutils, ros-lyrical-ros-workspace
+Description: An rcl logger implementation that doesn't do anything with log messages.
