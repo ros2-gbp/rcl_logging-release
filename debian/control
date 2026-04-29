@@ -1,0 +1,13 @@
+Source: ros-lyrical-rcl-logging-implementation
+Section: misc
+Priority: optional
+Maintainer: Tomoya Fujita <tomoya.fujita825@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-lyrical-ament-cmake-ros, ros-lyrical-ament-lint-auto <!nocheck>, ros-lyrical-ament-lint-common <!nocheck>, ros-lyrical-rcl-logging-interface, ros-lyrical-rcl-logging-noop <!nocheck>, ros-lyrical-rcpputils, ros-lyrical-rcutils, ros-lyrical-ros-workspace
+Homepage: https://index.ros.org/p/rcl_logging_implementation/#lyrical
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-rcl-logging-implementation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lyrical-rcl-logging-interface, ros-lyrical-rcl-logging-spdlog, ros-lyrical-rcpputils, ros-lyrical-rcutils, ros-lyrical-ros-workspace
+Description: Provides the ability to load logging implementations at runtime.
+ This package acts as an abstraction layer between rcl and the actual logging implementation (e.g., spdlog, noop, or custom implementations).
