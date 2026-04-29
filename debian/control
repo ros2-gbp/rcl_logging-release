@@ -1,0 +1,12 @@
+Source: ros-lyrical-rcl-logging-interface
+Section: misc
+Priority: optional
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-lyrical-ament-cmake-ros, ros-lyrical-ament-lint-auto <!nocheck>, ros-lyrical-ament-lint-common <!nocheck>, ros-lyrical-rcpputils <!nocheck>, ros-lyrical-rcutils, ros-lyrical-ros-workspace
+Homepage: https://index.ros.org/p/rcl_logging_interface/#lyrical
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-rcl-logging-interface
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lyrical-rcutils, ros-lyrical-ros-workspace
+Description: Interface that rcl_logging backends needs to implement.
